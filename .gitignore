@@ -1,0 +1,10 @@
+backend/build/
+backend/tmp/
+
+frontend/node_modules/
+frontend/dist/
+
+.task/
+.task-meta-*
+
+dump.sql
