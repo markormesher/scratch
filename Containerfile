@@ -1,4 +1,4 @@
-FROM docker.io/debian:13.0 AS pkg-installer
+FROM docker.io/debian:13.0@sha256:6d87375016340817ac2391e670971725a9981cfc24e221c47734681ed0f6c0f5 AS pkg-installer
 
 RUN apt update && apt install -y --no-install-recommends ca-certificates tzdata
 
