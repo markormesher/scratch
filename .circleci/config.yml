@@ -4,7 +4,7 @@ version: "2.1"
 jobs:
   checkout:
     docker:
-      - image: cimg/base:2025.10
+      - image: cimg/base:2025.10@sha256:914f8f3896bc4033634a446552a8c256f19fdb56aa4e999cf493961d0681bc48
     steps:
       - checkout:
           path: .
@@ -14,13 +14,13 @@ jobs:
             - .
   ci-all:
     docker:
-      - image: cimg/base:2025.10
+      - image: cimg/base:2025.10@sha256:914f8f3896bc4033634a446552a8c256f19fdb56aa4e999cf493961d0681bc48
     steps:
       - run:
           command: echo "Done"
   fetch-task:
     docker:
-      - image: ghcr.io/markormesher/task-fetcher:v0.5.37
+      - image: ghcr.io/markormesher/task-fetcher:v0.5.37@sha256:adf81d52a55538726d135f7c634d501e797b4694001b87a6cab068c5fcb8fba7
     steps:
       - attach_workspace:
           at: .
@@ -32,7 +32,7 @@ jobs:
             - ./task
   imgbuild-imgpush:
     docker:
-      - image: cimg/base:2025.10
+      - image: cimg/base:2025.10@sha256:914f8f3896bc4033634a446552a8c256f19fdb56aa4e999cf493961d0681bc48
     steps:
       - attach_workspace:
           at: .
@@ -45,7 +45,7 @@ jobs:
             ./task imgpush
   imgrefs:
     docker:
-      - image: docker.io/alpine/git:v2.49.1
+      - image: docker.io/alpine/git:v2.49.1@sha256:6a349a8e142f1e62429377904c5eff5ff3d956bfe2bdf8acc1a84c85794632eb
     steps:
       - attach_workspace:
           at: .
